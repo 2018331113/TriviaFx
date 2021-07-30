@@ -74,6 +74,7 @@ public class QuizScreen {
         }
         clock = new Clock(this);
         Label name = new Label(playerName);
+
         score = new Label();
         score.setText("Score: 0");
 
@@ -161,6 +162,8 @@ public class QuizScreen {
             score.setText("Score: " + ++points);
         }
         if(idx== 9){
+            vBox.getChildren().remove(1,3);
+            vBox.setPrefSize(600,300);
             flag =false;
             clock.stopClock();
             while(!stack.isEmpty()){
